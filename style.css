@@ -166,3 +166,26 @@ footer {
   font-weight: 300;
   margin-bottom: 10px;
 }
+
+#quotes h2 {
+  margin-bottom: 5px;
+}
+
+#quotes h3 {
+  margin-top: 5px;
+}
+
+#musicBtn {
+  width: 3rem;
+  height: 2rem;
+  color: white;
+  border-radius: 25px;
+}
+
+#music i {
+  color: black;
+}
+
+#player {
+  display: none;
+}

@@ -11,7 +11,6 @@ function creatList(todo) {
 
   const imaa = document.createElement("i")
   imaa.className = "fa-solid fa-xmark fa-2x";
-  console.log(imaa);
   // btn.appendChild(imaa);
 
   span.innerText = todo.todo;
