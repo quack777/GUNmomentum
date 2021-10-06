@@ -10,32 +10,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <form id="loginForm">
-        <h1>What's your name?</h1>
-        <input required maxlength="7" type="text">
-        <p class="hidden"></p>
-    </form>
-    <p id="clock"></p>
-    <!-- <div class="background">
-        <img id="white" src="img/white.jpg">
-        <img id="black" class="hidden" src="img/black.jpg">
-        <button id="imgChange"></button>
-    </div> -->
-    <div id="quotes">
-        <h2 id="quote"></h2>
-        <h3 id="name"></h3>
-    </div>
-    <div class="todo">
-        <form id="todoForm">
-            <input required type="text" placeholder="할일 적으삼">
+    <header>
+        <div id="wheathers">
+            <h1 id="city"></h1>
+            <h1 id="temp"></h1>
+            <h1 id="wheather"></h1>
+        </div>
+    </header>
+    <section>
+        <p id="clock"></p>
+        <form id="loginForm">
+            <h1>What's your name?</h1>
+            <input required maxlength="7" type="text">
+            <p class="hidden"></p>
         </form>
-        <ul id="todos"></ul>
-    </div>  
-    <div id="wheathers">
-        <h1 id="city"></h1>
-        <h1 id="temp"></h1>
-        <h1 id="wheather"></h1>
-    </div>
+        <!-- <div class="background">
+            <img id="white" src="img/white.jpg">
+            <img id="black" class="hidden" src="img/black.jpg">
+            <button id="imgChange"></button>
+        </div> -->
+        <div class="todo">
+            <form id="todoForm">
+                <input required type="text" placeholder="할일 적으삼">
+            </form>
+            <ul id="todos"></ul>
+        </div>
+    </section>
+    <footer>
+        <div id="quotes">
+            <h2 id="quote"></h2>
+            <h3 id="name"></h3>
+        </div>
+    </footer>
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/background.js"></script>

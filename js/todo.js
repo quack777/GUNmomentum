@@ -7,16 +7,19 @@ let todos = [];
 function creatList(todo) {
   const li = document.createElement("li")
   const span = document.createElement("span")
-  const btn = document.createElement("button")
-  //const i = document.createElement("i")
-  //i.className = "fas fa-times"
+  // const btn = document.createElement("button")
+
+  const imaa = document.createElement("i")
+  imaa.className = "fa-solid fa-xmark fa-2x";
+  console.log(imaa);
+  // btn.appendChild(imaa);
+
   span.innerText = todo.todo;
   li.id = todo.id;
-  //btn.appendChild(i)
   li.appendChild(span)
-  li.appendChild(btn)
+  li.appendChild(imaa)
   ulTodos.appendChild(li)
-  btn.addEventListener("click", todoDeleat)
+  imaa.addEventListener("click", todoDeleat)
 }
 
 function handleSubmitTodo(e) {
