@@ -15,6 +15,7 @@ section {
   text-align: center;
   font-size: 150px;
   color: white;
+  display: inline-block;
 }
 
 #loginForm {
@@ -188,4 +189,13 @@ footer {
 
 #player {
   display: none;
+}
+
+@media screen and (max-width: 508px) {
+  #clock {
+    font-size: 5rem;
+  }
+  .todo input {
+    width: 300px;
+  }
 }
