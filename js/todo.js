@@ -3,22 +3,22 @@ const input = formTodo.querySelector("input");
 const ulTodos = document.querySelector("#todos");
 
 let todos = [];
-
+const aaa = "12";
 function creatList(todo) {
-  const li = document.createElement("li")
-  const span = document.createElement("span")
+  const li = document.createElement("li");
+  const span = document.createElement("span");
   // const btn = document.createElement("button")
 
-  const imaa = document.createElement("i")
+  const imaa = document.createElement("i");
   imaa.className = "fa-solid fa-xmark fa-2x";
   // btn.appendChild(imaa);
 
   span.innerText = todo.todo;
   li.id = todo.id;
-  li.appendChild(span)
-  li.appendChild(imaa)
-  ulTodos.appendChild(li)
-  imaa.addEventListener("click", todoDeleat)
+  li.appendChild(span);
+  li.appendChild(imaa);
+  ulTodos.appendChild(li);
+  imaa.addEventListener("click", todoDeleat);
 }
 
 function handleSubmitTodo(e) {
@@ -27,32 +27,32 @@ function handleSubmitTodo(e) {
   input.value = "";
   const todoObject = {
     todo: todo,
-    id: Date.now()
-  }
-  creatList(todoObject)
+    id: Date.now(),
+  };
+  creatList(todoObject);
   //여기에 입력한 {todo}를 localstorage에도 저장해서 reload해도 계속남아있게
-  todos.push(todoObject)
-  savintTodo()
+  todos.push(todoObject);
+  savintTodo();
 }
 
 function savintTodo() {
-  localStorage.setItem("todo", JSON.stringify(todos))
+  localStorage.setItem("todo", JSON.stringify(todos));
 }
 
 function todoDeleat(e) {
   const deleateLi = e.target.parentElement;
-  deleateLi.remove()
+  deleateLi.remove();
   //여기서 local에 있는 것도 지워야함
   const localTodo = JSON.parse(localStorage.getItem("todo"));
-  let dele = localTodo.filter(a => a.id !== Number(deleateLi.id))
-  todos = dele
-  savintTodo()
+  let dele = localTodo.filter((a) => a.id !== Number(deleateLi.id));
+  todos = dele;
+  savintTodo();
 }
 
-if(localStorage.getItem("todo") !== null) {
+if (localStorage.getItem("todo") !== null) {
   const localTodo = JSON.parse(localStorage.getItem("todo"));
   todos = localTodo;
-  localTodo.forEach(creatList)
+  localTodo.forEach(creatList);
 }
 
-formTodo.addEventListener("submit", handleSubmitTodo)
+formTodo.addEventListener("submit", handleSubmitTodo);

@@ -14,8 +14,8 @@
 const images = [
   "img/달, 나무.jpg",
   "img/열기구.jpg",
-  "img/파도물결.jpg",
   "img/car.jpg",
+  "img/black.jpg"
 ]
 
 const ran = Math.floor(Math.random() * images.length)

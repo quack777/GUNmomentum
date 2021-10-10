@@ -7,20 +7,20 @@ const iPause = document.createElement("i");
 iPlay.className = "fas fa-play fa-2x";
 iPause.className = "fas fa-pause fa-2x";
 console.log(iPlay);
-musicBtn.appendChild(iPlay)
+musicBtn.appendChild(iPlay);
 
 function onClickMusicBtn(event) {
   player.playVideo();
   let a = player.getPlayerState();
   console.log(a);
-  if(a == 1) {
+  if (a == 1) {
     player.pauseVideo();
-    musicBtn.appendChild(iPause)
-    musicBtn.removeChild(iPlay)
+    musicBtn.appendChild(iPause);
+    musicBtn.removeChild(iPlay);
   } else {
     player.playVideo();
-    musicBtn.appendChild(iPlay)
-    musicBtn.removeChild(iPause)
+    musicBtn.appendChild(iPlay);
+    musicBtn.removeChild(iPause);
   }
 }
 
@@ -28,24 +28,25 @@ musicBtn.addEventListener("click", onClickMusicBtn);
 
 //밑에 부터 api
 
-const tag = document.createElement('script');
+const tag = document.createElement("script");
 
 tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
+const firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3.
-// 
+//
 let player;
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '360',
-    width: '640',
-    videoId: 'fC71LJQVoK4',
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    videoId: "fC71LJQVoK4",
     events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange, onClickMusicBtn
-    }
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+      onClickMusicBtn,
+    },
   });
 }
 
@@ -54,7 +55,7 @@ function onPlayerReady(event) {
   event.target.stopVideo();
 }
 
-// 5. 
+// 5.
 let done = false;
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING && !done) {

@@ -1,1 +1,0 @@
-#right github-pages click!!!
