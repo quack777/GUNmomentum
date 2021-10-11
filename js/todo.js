@@ -10,16 +10,28 @@ function creatList(todo) {
   // const btn = document.createElement("button")
 
   const imaa = document.createElement("i");
+  const btn = document.createElement("button");
   imaa.className = "fa-solid fa-xmark fa-2x";
   // btn.appendChild(imaa);
+  const del = document.createElement("del");
+  del.classList.add("transparent");
 
   span.innerText = todo.todo;
   li.id = todo.id;
-  li.appendChild(span);
+  li.appendChild(btn);
+  del.appendChild(span);
+  li.appendChild(del);
   li.appendChild(imaa);
   ulTodos.appendChild(li);
   imaa.addEventListener("click", todoDeleat);
+  btn.addEventListener("click", spanOutDel);
 }
+
+const spanOutDel = (e) => {
+  //span 부모로 del을 추가하고 싶음
+  const del = e.path[1].childNodes[1]
+  del.classList.toggle("transparent");
+};
 
 function handleSubmitTodo(e) {
   e.preventDefault();
