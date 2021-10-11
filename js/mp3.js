@@ -36,7 +36,7 @@ console.log(randomNum);
 
 function randomPlayAudio() {
   audio.volume = 0.75;
-  audio.src = `/mp3/${audioSRC[randomNum]}.mp3`;
+  audio.src = `https://quack777.github.io/GUNmomentum/mp3/${audioSRC[randomNum]}.mp3`;
 }
 
 window.addEventListener("load", randomPlayAudio);
